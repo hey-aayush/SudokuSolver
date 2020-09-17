@@ -16,7 +16,7 @@ def modelPredictGrid(image,model):
         for j in range(9):
             img_croped=SudokuSolve.ImageCrop.img_crop(i,j,image)
             img=cv2.resize(img_croped,(28,28))
-            tst.append((1-img/255))
+            tst.append(img/255)
             
     tst_img=np.array(tst).reshape(81,28,28,1)
     grid_array = model.predict_classes(tst_img,batch_size=81,verbose=0)

@@ -33,16 +33,16 @@ def Extract_sudoko(sorted_points,image,grid_side,output_grid_size):
     warped = cv2.warpPerspective(image, M, output_grid_size)
     return warped
 
-def show_frames(image):    
+def show_frames(image,output_grid_size):    
+
+    grid_side = output_grid_size[0]
     processed_img=process_raw(image)
-
     approx = return_contours(processed_img)
-
     Sudoku_grid= np.zeros(output_grid_size)
 
     if len(approx)==4:
         sorted_points = sort_approx(approx)
-        cv2.drawContours(image, [approx], 0, (0,0,0), 5)
-        Sudoku_grid= Extract_sudoko(sorted_points,image)
+        #cv2.drawContours(image, [approx], 0, (0,0,0), 5)
+        Sudoku_grid= Extract_sudoko(sorted_points,image,grid_side,output_grid_size)
 
     return image,Sudoku_grid
