@@ -1,5 +1,5 @@
 import cv2
-import ImageCrop
+import SudokuSolve.ImageCrop
 import numpy as np
 
 from tensorflow.keras.models import load_model
@@ -14,7 +14,7 @@ def modelPredictGrid(image,model):
 
     for i in range(9):
         for j in range(9):
-            img_croped=ImageCrop.img_crop(i,j,image)
+            img_croped=SudokuSolve.ImageCrop.img_crop(i,j,image)
             img=cv2.resize(img_croped,(28,28))
             tst.append((1-img/255))
             
