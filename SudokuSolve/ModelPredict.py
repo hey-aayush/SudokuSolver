@@ -5,6 +5,7 @@ import numpy as np
 from tensorflow.keras.models import load_model
 
 #add something like ki agr prediction accuracy km h to opening and erosion and dilation kre!!!
+#slow hai bkai thik hai
 
 def modelPredictGrid(image,model):
 

@@ -6,7 +6,7 @@ def return_grid_image(grid,return_size):
     grid_image= np.ones(return_size)
     for i in range(9):
         for j in range(9):
-            grid_image=cv2.putText(grid_image,str(int(grid[j][i])),((side_length+1)*(i),(side_length-1)*(j+1)),cv2.FONT_HERSHEY_SIMPLEX ,0.7,(0,255,0),3)
+            grid_image=cv2.putText(grid_image,str(int(grid[j][i])),((side_length+1)*(i),(side_length-1)*(j+1)),cv2.FONT_HERSHEY_SIMPLEX ,0.7,(0,255,0),1)
     
     return grid_image  
 
